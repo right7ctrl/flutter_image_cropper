@@ -83,7 +83,7 @@
           cropViewController.aspectRatioLockEnabled = YES;
       }
       
-      [_viewController presentViewController:cropViewController animated:YES completion:nil];
+      [_viewController presentViewController:cropViewController animated:NO completion:nil];
   } else {
       result(FlutterMethodNotImplemented);
   }
@@ -218,14 +218,14 @@
                                     details:nil]);
     }
     
-    [cropViewController dismissViewControllerAnimated:YES completion:nil];
+    [cropViewController dismissViewControllerAnimated:NO completion:nil];
 
     _result = nil;
     _arguments = nil;
 }
 
 - (void)cropViewController:(TOCropViewController *)cropViewController didFinishCancelled:(BOOL)cancelled {
-    [cropViewController dismissViewControllerAnimated:YES completion:nil];
+    [cropViewController dismissViewControllerAnimated:NO completion:nil];
     _result(nil);
     
     _result = nil;
